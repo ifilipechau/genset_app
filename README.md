@@ -70,9 +70,11 @@ Quantidade: 2
 Horas de uso por dia: 8
 ```
 ### 👨‍💻 Autor
-Filipe Chau
-Data Center Engineer • Engenheiro em Segurança Eletrônica • Educador em Tecnologia
-📧 [filipechau@outlook.pt ou [linkedin](https://www.linkedin.com/in/filipe-chau-b25820211)]
+```python
+# Filipe Chau
+# Engenheiro Electrónico e de Telecomunicações
+# 📧[filipechau@outlook.pt ou [linkedin](https://www.linkedin.com/in/filipe-chau-b25820211)]
+```
 
 ### 📜 Licença
 Este projecto está licenciado sob a licença MIT. Sinta-se livre para usar e adaptar.
