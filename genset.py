@@ -5,7 +5,7 @@ import datetime
 def calcular_gerador():
     print("=== Dimensionador de Gerador ===\n")
     equipamentos = []
-    total_potencia = 0
+    potencia_total = 0
 
     n = int(input("Quantos equipamentos deseja inserir? "))
 
@@ -66,4 +66,6 @@ def calcular_gerador():
                 f.write(f"Consumo estimado diário: {round(energia_total_diaria/1000, 2)} kWh\n")
         print("Relatório exportado com sucesso: relatorio_gerador.txt")
 
-
+# Executar a função principal
+if __name__ == "__main__":
+    calcular_gerador()

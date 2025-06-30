@@ -1,0 +1,12 @@
+RELATÓRIO DE DIMENSIONAMENTO DE GERADOR
+Data: 2025-06-30 21:10:35.013638
+
+- 3x Lampada (230.0W) - Tipo: iluminacao
+- 2x TV (1000.0W) - Tipo: equipamento comum
+- 1x Aquecedor (6250.0W) - Tipo: motor
+
+Potência total:  8940.00 W
+Factor de potência: 0.8
+Factor de segurança: 1.2
+Potência ideal do gerador: 13.41 kVA
+Consumo estimado diário: 10.0 kWh
