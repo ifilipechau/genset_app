@@ -45,7 +45,7 @@ O programa irá:
 - Perguntar se deseja salvar um relatório .txt
 
 ### 4. Exemplo de uso
-
+```bash
 Quantos equipamentos deseja inserir? 3
 
 Equipamento 1:
@@ -68,7 +68,7 @@ Tipo: sensível
 Potência (W): 250
 Quantidade: 2
 Horas de uso por dia: 8
-
+```
 ### 👨‍💻 Autor
 Filipe Chau
 Data Center Engineer • Engenheiro em Segurança Eletrônica • Educador em Tecnologia
