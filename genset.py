@@ -49,3 +49,21 @@ def calcular_gerador():
     energia_total_diaria = sum(e['potencia'] * e['quantidade'] * e['tempo_uso'] for e in equipamentos)
     if energia_total_diaria > 0:
         print(f"Consumo diário estimado: {round(energia_total_diaria/1000, 2)} kWh/dia")
+
+    # Exportar para TXT
+    exportar = input("\nDeseja exportar o relatório pra .txt? (s/n): ").lower()
+    if exportar == 's':
+        with open("relatorio_gerador.txt", "w") as f:
+            f.write("RELATÓRIO DE DIMENSIONAMENTO DE GERADOR\n")
+            f.write(f"Data: {datetime.datetime.now()}\n\n")
+            for eq in equipamentos:
+                f.write(f"- {eq['quantidade']}x {eq['nome']} ({eq['potencia']}W) - Tipo: {eq['tipo']}\n")
+            f.write(f"\nPotência total: {potencia_total: .2f} W\n")
+            f.write(f"Factor de potência: {factor_potencia}\n")
+            f.write(f"Factor de segurança: {factor_seguranca}\n")
+            f.write(f"Potência ideal do gerador: {round(potencia_kva, 2)} kVA\n")
+            if energia_total_diaria > 0:
+                f.write(f"Consumo estimado diário: {round(energia_total_diaria/1000, 2)} kWh\n")
+        print("Relatório exportado com sucesso: relatorio_gerador.txt")
+
+
