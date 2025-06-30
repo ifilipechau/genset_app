@@ -30,12 +30,14 @@ def calcular_gerador():
             "tempo_uso": tempo_uso
         })
 
-        total_potencia += potencia * quantidade
+        potencia_total += potencia * quantidade
 
     
     # Factor de potência (customizável por tipo)
     factor_potencia = float(input("\nEscreva o factor de potência (ex: 0.8): ") or 0.8)
     factor_seguranca = float(input("\nEscreva o factor de segurança (ex: 1.2)") or 1.2)
 
-    #
+    # Conversão para kVA
+    potencia_kva = (potencia_total / 1000) / factor_potencia
+    potencia_kva *= factor_seguranca
     
