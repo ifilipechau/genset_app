@@ -49,7 +49,7 @@ O programa irá:
 Quantos equipamentos deseja inserir? 3
 
 Equipamento 1:
-Nome: Geladeira
+Nome: Congelador
 Tipo: motor
 Potência (W): 200
 Quantidade: 1
