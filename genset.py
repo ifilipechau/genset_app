@@ -16,3 +16,17 @@ def calcular_gerador():
         potencia = float(input("Potência (W): "))
         quantidade = int(input("Quantidade: "))
         tempo_uso = float(input("Horas de uso por dia (opcional - 0 se desconhecido): "))
+
+        # Factor de arranque para motores (multiplica a potência por 2.5)
+        if tipo == "motor":
+            factor_arranque = 2.5
+            potencia *= factor_arranque
+
+        equipamentos.append({
+            "nome": nome,
+            "tipo": tipo,
+            "potencia": potencia,
+            "quantidade": quantidade,
+            "tempo_uso": tempo_uso
+        })
+    
