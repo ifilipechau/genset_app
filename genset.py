@@ -2,11 +2,7 @@
 
 
 # Importa bibliotecas necessárias
-import streamlit as st
 import datetime
-
-# Define o título da aba e o layout da página
-st.set_page_config(page_title="Dimensionador de Gerador", layout="centered")
 
 def inserir_equipamento():
     equipamentos = []
