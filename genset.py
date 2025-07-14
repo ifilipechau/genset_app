@@ -1,5 +1,8 @@
-# Projecto de Gerador
+# Projecto: DIMENSIONADOR DE GERADOR
 
+
+# Importa bibliotecas necessárias
+import streamlit as st
 import datetime
 
 def inserir_equipamento():
