@@ -1,13 +1,12 @@
-RELATÓRIO DE DIMENSIONAMENTO DE GERADOR
-Data: 2025-07-14 14:06:50.141154
+RELATÓRIO DE DIMENSIONAMENTODE GERADOR
+Data: 2025-07-14 15:00:39.407042
 
-- 2x BOmba (1407.5W) - Tipo: motor
-- 5x lampada (100.0W) - Tipo: iluminacao
-- 1x geleira (1125.0W) - Tipo: motor
-- 1x fogao (34.0W) - Tipo: comum
+- 2x Bomba (875.0W) - Tipo: motor
+- 5x Lampada (90.0W) - Tipo: iluminacao
+- 1x fogao (230.0W) - Tipo: sensivel
+- 1x Forno (340.0W) - Tipo: comum
 
-Potência total:  4474.00 W
+Potência total:  2770.00 W
 Factor de potência: 0.8
 Factor de segurança: 1.2
-Potência ideal do gerador: 6.71 kVA
-Consumo estimado diário: 38.26 kWh
+Potência ideal do gerador: 4.15 kVA
