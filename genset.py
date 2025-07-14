@@ -51,8 +51,11 @@ def exportar_relatorio(equipamentos, potencia_total, potencia_kva, factor_potenc
         print("Relatório exportado com sucesso: relatorio_gerador.txt")
 
 def calcular_gerador():
-    print("=== Dimensionador de Gerador ")
+    print("=== Dimensionador de Gerador ===\n")
     
+    equipamentos = inserir_equipamento()
+    potencia_total = calcular_potencia_total(equipamentos)
+
     # Factor de potência (customizável por tipo)
     factor_potencia = float(input("\nEscreva o factor de potência (ex: 0.8): ") or 0.8)
     factor_seguranca = float(input("\nEscreva o factor de segurança (ex: 1.2): ") or 1.2)
@@ -66,28 +69,23 @@ def calcular_gerador():
     print(f"Potência ideal do gerador: {round(potencia_kva, 2)} kVA")
 
     # Energia diária estimada (se tempos de uso forem fornecidos)
-    energia_total_diaria = sum(e['potencia'] * e['quantidade'] * e['tempo_uso'] for e in equipamentos)
+    energia_total_diaria = sum(
+        e['potencia'] * e['quantidade'] * e['tempo_uso'] for e in equipamentos)
     if energia_total_diaria > 0:
         print(f"Consumo diário estimado: {round(energia_total_diaria/1000, 2)} kWh/dia")
 
     # Exportar para TXT
     exportar = input("\nDeseja exportar o relatório pra .txt? (s/n): ").lower()
     if exportar == 's':
-        with open("relatorio_gerador.txt", "w") as f:
-            f.write("RELATÓRIO DE DIMENSIONAMENTO DE GERADOR\n")
-            f.write(f"Data: {datetime.datetime.now()}\n\n")
+        exportar_relatorio(
+            equipamentos,
+            potencia_total,
+            potencia_kva,
+            factor_potencia,
+            factor_seguranca,
+            energia_total_diaria
+        )
 
-            for eq in equipamentos:
-                f.write(f"- {eq['quantidade']}x {eq['nome']} ({eq['potencia']}W) - Tipo: {eq['tipo']}\n")
-            f.write(f"\nPotência total: {potencia_total: .2f} W\n")
-            f.write(f"Factor de potência: {factor_potencia}\n")
-            f.write(f"Factor de segurança: {factor_seguranca}\n")
-            f.write(f"Potência ideal do gerador: {round(potencia_kva, 2)} kVA\n")
-
-            if energia_total_diaria > 0:
-                f.write(f"Consumo estimado diário: {round(energia_total_diaria/1000, 2)} kWh\n")
-        print("Relatório exportado com sucesso: relatorio_gerador.txt")
-
-# Executar a função principal
+# Ponto de entrada / função principal
 if __name__ == "__main__":
     calcular_gerador()
