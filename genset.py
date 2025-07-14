@@ -35,6 +35,9 @@ def calcular_potencia_total(equipamentos):
         total += e['potencia'] * e['quantidade']
     return total
 
+def exportar_relatorio(equipamentos, potencia_total, potencia_kva, factor_potencia, factor_seguranca, energia_total_diaria):
+    with open("relatorio_gerador.txt", "w") as f:
+        f.write("RELATÓRIO DE DIMENSIONAMENTODE GERADOR\n")
     
     # Factor de potência (customizável por tipo)
     factor_potencia = float(input("\nEscreva o factor de potência (ex: 0.8): ") or 0.8)
