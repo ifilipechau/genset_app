@@ -3,7 +3,6 @@
 import datetime
 
 def inserir_equipamento():
-    print("=== Dimensionador de Gerador ===\n")
     equipamentos = []
     n = int(input("Quantos equipamentos deseja inserir? "))
 
@@ -27,7 +26,7 @@ def inserir_equipamento():
             "tempo_uso": tempo_uso
         })
 
-        return equipamentos
+    return equipamentos
     
 def calcular_potencia_total(equipamentos):
     total = 0
