@@ -28,7 +28,13 @@ def inserir_equipamento():
         })
 
         return equipamentos
+    
 def calcular_potencia_total(equipamentos):
+    total = 0
+    for e in equipamentos:
+        total += e['potencia'] * e['quantidade']
+    return total
+
     
     # Factor de potência (customizável por tipo)
     factor_potencia = float(input("\nEscreva o factor de potência (ex: 0.8): ") or 0.8)
