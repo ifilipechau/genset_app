@@ -38,6 +38,15 @@ def calcular_potencia_total(equipamentos):
 def exportar_relatorio(equipamentos, potencia_total, potencia_kva, factor_potencia, factor_seguranca, energia_total_diaria):
     with open("relatorio_gerador.txt", "w") as f:
         f.write("RELATÓRIO DE DIMENSIONAMENTODE GERADOR\n")
+        f.write(f"Data: {datetime.datetime.now()}\n\n")
+
+        for eq in equipamentos:
+            f.write(f"- {eq['quantidade']}x {eq['nome']} ({eq['potencia']}W) - Tipo: {eq['tipo']}\n")
+        f.write(f"\nPotência total: {potencia_total: .2f} W\n")
+        f.write(f"Factor de potência: {factor_potencia}\n")
+        f.write(f"Factor de segurança: {factor_seguranca}\n")
+        f.write(f"Potência ideal do gerador: {round(potencia_kva, 2)} kVA\n")
+
     
     # Factor de potência (customizável por tipo)
     factor_potencia = float(input("\nEscreva o factor de potência (ex: 0.8): ") or 0.8)
