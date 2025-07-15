@@ -8,11 +8,17 @@ import datetime
 #Define o título da aba e o layout da página
 st.set_page_config(page_title="Dimensionador de Gerador", layout="centered")
 
-#Cabeçalho
+# Cabeçalho principal
+st.title(" Dimensionador de Gerador")
+st.write("Insira os dados dos equipamentos abaixo:")
 
-def inserir_equipamento():
+# Lista para guardar os equipamentos inseridos
     equipamentos = []
-    n = int(input("Quantos equipamentos deseja inserir? "))
+
+# Campo para o utilizador definir quantos equipamentos vai inserir
+quantidade_equipamentos = st.number_input(
+    "Quantos equipamentos deseja inserir?", min_value=1, step=1
+)
 
     for i in range(n):
         print(f"\nEquipamento {i+1}:")
