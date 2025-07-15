@@ -20,9 +20,12 @@ quantidade_equipamentos = st.number_input(
     "Quantos equipamentos deseja inserir?", min_value=1, step=1
 )
 
-    for i in range(n):
-        print(f"\nEquipamento {i+1}:")
-        nome = input("Nome: ")
+# Loop para inserir os dados de cada equipamento
+    for i in range(quantidade_equipamentos):
+        # Um "expander" para cada equipamento (caixa colapsável)
+        with st.expander(f"Equipamento {i+1}"):
+        nome = st.text_input(f"Nome do equipamento {i+1}", key=f"nome_{i}")
+        
         tipo = input("Tipo (iluminacao/motor/equipamento comum/sensível): ").lower()
         potencia = float(input("Potência (W): "))
         quantidade = int(input("Quantidade: "))
